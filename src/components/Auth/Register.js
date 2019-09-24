@@ -23,9 +23,9 @@ function Register(props) {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        props.history.push('/gamemap')
       })
 
-    props.history.push('/gamemap')
   }
 
   console.log(userName, password, passwordConfirm)
