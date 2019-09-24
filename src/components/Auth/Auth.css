@@ -1,3 +1,12 @@
+.register {
+    background-image: url('./../../imgs/45884.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 50px;
+}
+
 .register_form {
     background: rgba(228, 244, 92, .8);
     width: 70%;

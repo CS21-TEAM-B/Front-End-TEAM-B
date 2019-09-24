@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './Auth.css';
 
-function Register(props) {
+function Login(props) {
 
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
 
 
 
@@ -15,11 +14,10 @@ function Register(props) {
 
     const user = {
       username: userName,
-      password1: password,
-      password2: passwordConfirm
+      password: password,
     };
 
-    axios.post(`https://mudapp.herokuapp.com/api/registration/`, {...user})
+    axios.post(`https://mudapp.herokuapp.com/api/login/`, {...user})
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -28,7 +26,7 @@ function Register(props) {
     props.history.push('/gamemap')
   }
 
-  console.log(userName, password, passwordConfirm)
+  console.log(userName, password)
 
   return (
     <div className="register">
@@ -52,16 +50,7 @@ function Register(props) {
               onChange={(e) => setPassword(e.target.value)}/>
             </div>
 
-            <div className="input">
-              <input className="input-content" 
-              type="password" 
-              name="password" required 
-              placeholder="Confirm Password" 
-              value={passwordConfirm}
-              onChange={(e) => setPasswordConfirm(e.target.value)}/>
-            </div>
-
-            <p>Already have an account? <span className="redirect_link">Sign in</span></p>
+            <p>Don't have an account? <span className="redirect_link">Sign up</span></p>
             <div className="button_wrapper">
               <button className="register_button" type="submit">Start</button>
             </div> 
@@ -70,4 +59,4 @@ function Register(props) {
   );
 }
 
-export default Register;
+export default Login;
