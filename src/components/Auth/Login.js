@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Auth.css';
 
@@ -50,7 +51,7 @@ function Login(props) {
               onChange={(e) => setPassword(e.target.value)}/>
             </div>
 
-            <p>Don't have an account? <span className="redirect_link">Sign up</span></p>
+            <p>Don't have an account? <Link to="/" className="link-wrapper"><span className="redirect_link">Sign up</span></Link></p>
             <div className="button_wrapper">
               <button className="register_button" type="submit">Start</button>
             </div> 

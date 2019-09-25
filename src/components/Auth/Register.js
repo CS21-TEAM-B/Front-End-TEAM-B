@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Auth.css';
 
@@ -61,7 +62,7 @@ function Register(props) {
               onChange={(e) => setPasswordConfirm(e.target.value)}/>
             </div>
 
-            <p>Already have an account? <span className="redirect_link">Sign in</span></p>
+            <p>Already have an account? <Link to="/login" className="link-wrapper"><span className="redirect_link">Sign in</span></Link></p>
             <div className="button_wrapper">
               <button className="register_button" type="submit">Start</button>
             </div> 
