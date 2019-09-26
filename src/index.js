@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import './index.css';
 import Register from './components/Auth/Register';
-import GameMap from './components/GameMap/GameMap';
+// import GameMap from './components/GameMap/GameMap';
 import Login from './components/Auth/Login';
+import Map from './Player API/MAP UI';
 
 const routing = (
     <Router>
@@ -24,7 +25,7 @@ const routing = (
             <Route
             exact
             path='/gamemap'
-            render={(props) => <GameMap {...props} />}
+            render={(props) => <Map {...props} />}
             />
         </Switch>
     </Router>
