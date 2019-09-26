@@ -15,15 +15,15 @@ const Map = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios
-      .get("https://mudapp-staging.herokuapp.com/api/adv/init/")
-      .then(res => {
-        setDetails(res.data);
-      });
+    // axios
+    //   .get("https://mudapp-staging.herokuapp.com/api/adv/init/")
+    //   .then(res => {
+    //     setDetails(res.data);
+    //   });
 
-    // axios.get("https://mudapp-staging.herokuapp.com/api/rooms").then(res => {
-    //   setMap(res.data);
-    // });
+    axios.get("https://cors-anywhere.herokuapp.com/https://mudapp-staging.herokuapp.com/api/rooms").then(res => {
+      setMap(res.data);
+    });
   }, []);
 
   const handleClick = e => {
