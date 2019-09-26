@@ -13,6 +13,7 @@ const Map = () => {
   const [details, setDetails] = useState({});
   const [direction, setDirection] = useState("");
   const [error, setError] = useState("");
+  const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     axios
@@ -22,6 +23,19 @@ const Map = () => {
         setDetails(res.data);
       });
   }, []);
+
+  useEffect(() => {
+    axios
+    .get("https://mudapp-staging.herokuapp.com/api/rooms")
+
+    .then(res => {
+        setRooms(res.data);
+        console.log(res.data);
+    })
+    .catch(error => {
+        console.log(error.message);
+    });
+  }, []); 
 
   const handleClick = e => {
     e.preventDefault();

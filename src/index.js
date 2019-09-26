@@ -7,6 +7,7 @@ import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import Map from "./Player API/MAP UI";
 
+
 const key = "";
 
 const routing = (
@@ -21,6 +22,7 @@ const routing = (
       <Route exact path='/login' render={props => <Login {...props} />} />
 
       <Route exact path='/gamemap' render={props => <Map {...props} />} />
+
     </Switch>
   </Router>
 );
