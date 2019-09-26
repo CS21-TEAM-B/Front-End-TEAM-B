@@ -17,10 +17,13 @@ function Login(props) {
     };
 
     axios
-      .post(`https://mudapp.herokuapp.com/api/login/`, { ...user })
+      .post(`https://lambda-mud-test.herokuapp.com/api/login/`, { ...user })
       .then(res => {
         console.log(res);
         console.log(res.data);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Token ${res.data.key}`;
         props.history.push("/gamemap");
       });
   };
