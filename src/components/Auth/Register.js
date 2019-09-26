@@ -31,6 +31,9 @@ function Register(props) {
       });
   };
 
+  
+
+
   console.log(userName, password, passwordConfirm);
 
   return (

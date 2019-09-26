@@ -5,11 +5,11 @@ import "./MAP UI.scss";
 import Controls from "./Controls";
 import SideMenu from "./SideMenu";
 
-// axios.defaults.headers.common["Authorization"] =
-//   "Token 9cc02eba9fa61e9154c47ebfe0bb99591d17faa9";
+axios.defaults.headers.common["Authorization"] =
+  "Token b4f9008a42a38e4c7c499edece2da77bc4c8de53";
 
 const Map = () => {
-  //   const [map, setMap] = useState([]);
+  const [map, setMap] = useState([]);
   const [details, setDetails] = useState({});
   const [direction, setDirection] = useState("");
   const [error, setError] = useState("");
@@ -18,9 +18,12 @@ const Map = () => {
     axios
       .get("https://mudapp-staging.herokuapp.com/api/adv/init/")
       .then(res => {
-        console.log(res);
         setDetails(res.data);
       });
+
+    // axios.get("https://mudapp-staging.herokuapp.com/api/rooms").then(res => {
+    //   setMap(res.data);
+    // });
   }, []);
 
   const handleClick = e => {
@@ -37,8 +40,7 @@ const Map = () => {
       });
   };
 
-  console.log({ direction });
-  console.log(error);
+  console.log(map);
 
   return (
     <div className='main'>

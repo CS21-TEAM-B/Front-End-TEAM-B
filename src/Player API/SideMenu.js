@@ -4,8 +4,6 @@ const SideMenu = props => {
   console.log(props);
   const players = props.details.players;
 
-  console.log(players);
-
   if (props.details) {
     return (
       <div className='side-menu'>
