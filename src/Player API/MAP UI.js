@@ -17,7 +17,7 @@ const Map = () => {
   useEffect(() => {
     // axios
     //   .get("https://mudapp-staging.herokuapp.com/api/adv/init/")
-    //   .then(res => {
+    ///   .then(res => {
     //     setDetails(res.data);
     //   });
 
