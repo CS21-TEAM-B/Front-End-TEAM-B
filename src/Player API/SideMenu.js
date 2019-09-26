@@ -16,7 +16,7 @@ const SideMenu = props => {
         <div className='players'>
           <h3>Players Here:</h3>
           {players
-            ? players.map(player => <p>{player}</p>)
+            ? players.map((player, i) => <p key={i}>{player}</p>)
             : "No players currently here"}
         </div>
         <div className='chat'>bottom menu</div>

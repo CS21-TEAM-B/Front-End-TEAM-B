@@ -5,8 +5,11 @@ import "./MAP UI.scss";
 import Controls from "./Controls";
 import SideMenu from "./SideMenu";
 
+axios.defaults.headers.common["Authorization"] =
+  "Token 9cc02eba9fa61e9154c47ebfe0bb99591d17faa9";
+
 const Map = () => {
-  const [map, setMap] = useState([]);
+//   const [map, setMap] = useState([]);
   const [details, setDetails] = useState({});
   const [direction, setDirection] = useState("");
   const [error, setError] = useState("");
