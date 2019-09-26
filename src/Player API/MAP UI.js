@@ -11,9 +11,11 @@ const Map = () => {
   return (
     <div className='main'>
       <div className='map-container'>
-        <div className='map'>hello</div>
+        <div className="left-side">
+          <div className='map'>hello</div>
+          <Controls />
+        </div>
         <SideMenu></SideMenu>
-        <Controls />
       </div>
     </div>
   );
