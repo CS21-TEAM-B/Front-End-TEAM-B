@@ -4,20 +4,35 @@ import axios from "axios";
 axios.defaults.headers.common["Authorization"] =
   "Token 9cc02eba9fa61e9154c47ebfe0bb99591d17faa9";
 
-const Controls = (props) => {
-  
+const Controls = props => {
   return (
     <div className='controller'>
-      <button className='directions' onClick={e => props.handleClick(e)} value='w'>
+      <button
+        className='directions'
+        onClick={e => props.handleClick(e)}
+        value='w'
+      >
         ◄
       </button>
-      <button className='directions' onClick={e => props.handleClick(e)} value='n'>
+      <button
+        className='directions'
+        onClick={e => props.handleClick(e)}
+        value='n'
+      >
         ▲
       </button>
-      <button className='directions' onClick={e => props.handleClick(e)} value='s'>
+      <button
+        className='directions'
+        onClick={e => props.handleClick(e)}
+        value='s'
+      >
         ▼
       </button>
-      <button className='directions' onClick={e => props.handleClick(e)} value='e'>
+      <button
+        className='directions'
+        onClick={e => props.handleClick(e)}
+        value='e'
+      >
         ►
       </button>
     </div>
