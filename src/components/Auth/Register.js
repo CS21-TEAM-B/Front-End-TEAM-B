@@ -18,7 +18,7 @@ function Register(props) {
     };
 
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/registration/`, {
+      .post(`https://mudapp-staging.herokuapp.com/api/registration/`, {
         ...user
       })
       .then(res => {

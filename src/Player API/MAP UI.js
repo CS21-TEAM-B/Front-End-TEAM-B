@@ -9,14 +9,14 @@ import SideMenu from "./SideMenu";
 //   "Token 9cc02eba9fa61e9154c47ebfe0bb99591d17faa9";
 
 const Map = () => {
-//   const [map, setMap] = useState([]);
+  //   const [map, setMap] = useState([]);
   const [details, setDetails] = useState({});
   const [direction, setDirection] = useState("");
   const [error, setError] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://lambda-mud-test.herokuapp.com/api/adv/init/")
+      .get("https://mudapp-staging.herokuapp.com/api/adv/init/")
       .then(res => {
         console.log(res);
         setDetails(res.data);
@@ -28,7 +28,7 @@ const Map = () => {
     setDirection(e.target.value);
 
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/adv/move/", {
+      .post("https://mudapp-staging.herokuapp.com/api/adv/move/", {
         direction
       })
       .then(res => {
