@@ -29,11 +29,18 @@
         border-style: outset;
       }
 
+      .error {
+        margin-top: 3%;
+        height: 20px;
+        color: #d43454;
+        text-align: center;
+      }
+
       .controller {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-top: 13%;
+        margin-top: 11%;
         height: 18%;
         background: white;
         width: 100%;
@@ -53,11 +60,29 @@
 
     .side-menu {
       border: 6px solid #895334;
-      background: white;
+      background: black;
       border-style: outset;
       margin-left: 5%;
       height: 100%;
       width: 35%;
+
+      .player-stats {
+        height: 33%;
+        color: white;
+        // background: black;
+      }
+
+      .players {
+        color: white;
+		height: 33%;
+		overflow-y: scroll;
+      }
+
+      .chat {
+        height: 33%;
+        color: white;
+        // background: black;
+      }
     }
   }
 }
