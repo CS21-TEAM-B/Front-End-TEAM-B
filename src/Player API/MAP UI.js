@@ -63,7 +63,7 @@ const Map = () => {
           <h3>Welcome {details ? details.name : null}</h3>
 
           {console.log('loaded', loaded)}
-          {loaded && <GameMap className='map' rooms={rooms}/>}
+          <GameMap className='map' rooms={rooms} details={details}/>
 
           <div className='error'>{error ? error : null}</div>
           <Controls handleClick={handleClick} />

@@ -102,11 +102,13 @@
 
 .map-room__active {
   display: inline-block;
-  height: 25px;
-  width: 25px;
+  height: 45px;
+  width: 45px;
   margin-bottom: 20px;
-  font-size: .5rem;
+  font-size: .6rem;
+  color: white;
   margin-left: 10px;
   background: red;
+  border: 2px solid black;
 }
 
