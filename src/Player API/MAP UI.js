@@ -4,9 +4,10 @@ import axios from "axios";
 import "./MAP UI.scss";
 import Controls from "./Controls";
 import SideMenu from "./SideMenu";
+import GameMap from "../components/GameMap/GameMap";
 
-// axios.defaults.headers.common["Authorization"] =
-//   "Token 9cc02eba9fa61e9154c47ebfe0bb99591d17faa9";
+axios.defaults.headers.common["Authorization"] =
+  "Token 9e5bf83c05c0f8012c5fccc12f9005a3ba5a879a";
 
 const Map = () => {
 //   const [map, setMap] = useState([]);
@@ -14,13 +15,15 @@ const Map = () => {
   const [direction, setDirection] = useState("");
   const [error, setError] = useState("");
   const [rooms, setRooms] = useState([]);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios
       .get("https://lambda-mud-test.herokuapp.com/api/adv/init/")
       .then(res => {
-        console.log(res);
+        console.log('init', res);
         setDetails(res.data);
+        console.log(res.data)
       });
   }, []);
 
@@ -30,12 +33,12 @@ const Map = () => {
 
     .then(res => {
         setRooms(res.data);
-        console.log(res.data);
+        setLoaded(true);
     })
     .catch(error => {
         console.log(error.message);
     });
-  }, []); 
+  }, [loaded]); 
 
   const handleClick = e => {
     e.preventDefault();
@@ -51,15 +54,17 @@ const Map = () => {
       });
   };
 
-  console.log({ direction });
-  console.log(error);
 
+  console.log('rooms', rooms)
   return (
     <div className='main'>
       <div className='map-container'>
         <div className='left-side'>
           <h3>Welcome {details ? details.name : null}</h3>
-          <div className='map'></div>
+
+          {console.log('loaded', loaded)}
+          {loaded && <GameMap className='map' rooms={rooms}/>}
+
           <div className='error'>{error ? error : null}</div>
           <Controls handleClick={handleClick} />
         </div>

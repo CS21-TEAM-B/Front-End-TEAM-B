@@ -5,6 +5,7 @@ import "./Auth.css";
 
 function Register(props) {
   const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
@@ -13,12 +14,13 @@ function Register(props) {
 
     const user = {
       username: userName,
+      email: email,
       password1: password,
       password2: passwordConfirm
     };
 
     axios
-      .post(`https://lambda-mud-test.herokuapp.com/api/registration/`, {
+      .post(`https://mudapp-staging.herokuapp.com/api/registration/`, {
         ...user
       })
       .then(res => {
@@ -46,6 +48,19 @@ function Register(props) {
             placeholder='Username'
             value={userName}
             onChange={e => setUserName(e.target.value)}
+          />
+        </div>
+
+        
+        <div className='input'>
+          <input
+            className='input-content'
+            type='email'
+            name='email'
+            required
+            placeholder='Email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
         </div>
 
