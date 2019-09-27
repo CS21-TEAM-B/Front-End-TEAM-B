@@ -51,9 +51,7 @@ function GameMap(props) {
 
   return (
     <div className='map'>{
-        // props.rooms.map((room => {
-        //     return <div className={room.id === 868 ? 'map-room__active' : 'map-room'}></div> 
-        // }))
+
         titles.map(title => {
 
             return (
